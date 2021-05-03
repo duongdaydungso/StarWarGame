@@ -86,6 +86,9 @@ ExplodeObject* createBarrackExploding( const int& temp_x , const int& temp_y ) ;
 
 // MAIN GAME FUNCTION ***************************************************************************************
 
+// Screen Text
+GameStatus renderScreenText( std::string temp_text , int time_delay , TTF_Font* temp_font ) ;
+
 // Game Loop
 GameStatus playGame( int level ) ;
 
@@ -95,8 +98,8 @@ GameStatus drawMenu() ;
 // Pause Tab
 GameStatus pauseGame() ;
 
-// Screen Text
-GameStatus renderScreenText( std::string temp_text , int time_delay , TTF_Font* temp_font ) ;
+// Guide Tab
+GameStatus guideTab() ;
 
 // MAIN *****************************************************************************************************
 
@@ -121,8 +124,19 @@ int main( int argc , char* argv[] )
 		if( g_status == EXIT ) 
 		{
 			exit_game = true ;
+		}
+		else if( g_status == GUIDE )
+		{
+			GameStatus temp_status = guideTab() ;
 
-			break ;
+			if( temp_status == EXIT ) 
+			{
+				exit_game = true ;
+			}
+			else if( temp_status == EXIT_TO_MENU ) 
+			{
+				if( renderScreenText( "    BACK TO MENU" , 1 , screen_text_font_2 ) == EXIT ) exit_game = true ;
+			}
 		}
 		else if( g_status == GAME_START ) 
 		{
@@ -159,7 +173,7 @@ int main( int argc , char* argv[] )
 
 				if( temp_status == EXIT_TO_MENU )
 				{
-					if( renderScreenText( "    BACK TO MENU" , 2 , screen_text_font_2 ) == EXIT ) exit_game = true ;
+					if( renderScreenText( "    BACK TO MENU" , 1 , screen_text_font_2 ) == EXIT ) exit_game = true ;
 
 					break ;
 				}
@@ -449,6 +463,62 @@ ExplodeObject* createBarrackExploding( const int& temp_x , const int& temp_y )
 
 
 // MAIN GAME FUNCTION **************************************************************************************************************
+
+// Screen Text *************************************************************************************************
+GameStatus renderScreenText( std::string temp_text , int time_delay , TTF_Font* temp_font ) 
+{
+	// Create Text
+	TextObject screen_text ;
+	screen_text.setColor( 255 , 255 , 255 ) ; // WHITE COLOR CODE 
+	screen_text.setText( temp_text ) ;
+	screen_text.loadRenderText( temp_font , g_screen ) ;
+
+	// Setup Screen 
+	SDL_SetRenderDrawColor( g_screen , RENDER_DRAW_COLOR_R , RENDER_DRAW_COLOR_G , RENDER_DRAW_COLOR_B , RENDER_DRAW_COLOR_ALPHA ) ;
+	SDL_RenderClear( g_screen ) ;
+
+	// Render Background
+	renderBackground( 0 , 0 ) ;
+
+	// Draw Text
+	screen_text.show( g_screen , SCREEN_TEXT_X , SCREEN_TEXT_Y ) ;
+
+	// Update Screen
+	SDL_RenderPresent( g_screen ) ;
+
+	// Frame Timer 
+	ImpTimer frame_timer ;
+
+	int sum_of_time = 0 ;
+
+	bool showingText = true ;
+	bool is_exit = false ;
+
+	while( showingText == true )
+	{
+		// Start Frame Timer
+		frame_timer.start() ;
+
+		while( SDL_PollEvent( &g_event ) != 0 ) 
+		{
+			// Quit 
+			if( g_event.type == SDL_QUIT ) 
+			{
+				showingText = false ;
+
+				is_exit = true ;
+			}
+		}
+
+		sum_of_time += frame_timer.getTick() ;
+
+		if( sum_of_time > time_delay * 1000 ) showingText = false ;
+
+		if( is_exit == true ) return EXIT ;
+	}
+
+	return NOTHINGHAPPEN ;
+}
 
 // GAME LOOP *************************************************************************************************
 GameStatus playGame( int level ) 
@@ -877,6 +947,10 @@ GameStatus drawMenu()
 	newgame_button.loadButton( g_screen , button_font , "NEW GAME" ) ;
 	newgame_button.setPos( NEW_GAME_BUTTON_X , NEW_GAME_BUTTON_Y , NEW_GAME_BUTTON_TEXT_X , NEW_GAME_BUTTON_TEXT_Y ) ;
 
+	ButtonObject guide_button ;
+	guide_button.loadButton( g_screen , button_font , "GUIDE" ) ;
+	guide_button.setPos( GUIDE_BUTTON_X , GUIDE_BUTTON_Y , GUIDE_BUTTON_TEXT_X , GUIDE_BUTTON_TEXT_Y ) ;
+
 	ButtonObject exit_button ;
 	exit_button.loadButton( g_screen , button_font , "EXIT" ) ;
 	exit_button.setPos( EXIT_BUTTON_X , EXIT_BUTTON_Y , EXIT_BUTTON_TEXT_X , EXIT_BUTTON_TEXT_Y ) ;
@@ -886,6 +960,7 @@ GameStatus drawMenu()
 
 	bool showingMenu = true ;
 	bool is_game_start = false ;
+	bool is_guide = false ;
 	bool is_exit = false ;
 
 	while( showingMenu == true )
@@ -914,6 +989,7 @@ GameStatus drawMenu()
 
 				// Check Mouse On Button
 				newgame_button.checkMouse( mouse_pos_x , mouse_pos_y ) ;
+				guide_button.checkMouse( mouse_pos_x , mouse_pos_y ) ;
 				exit_button.checkMouse( mouse_pos_x , mouse_pos_y ) ;
 
 				if( g_event.button.button == SDL_BUTTON_LEFT ) 
@@ -921,6 +997,10 @@ GameStatus drawMenu()
 					if( newgame_button.getButtonIn() == true ) 
 					{
 						is_game_start = true ;
+					}
+					else if( guide_button.getButtonIn() == true ) 
+					{
+						is_guide = true ;
 					}
 					else if( exit_button.getButtonIn() == true ) 
 					{
@@ -942,6 +1022,7 @@ GameStatus drawMenu()
 
 		// Showing Button
 		newgame_button.show( g_screen ) ;
+		guide_button.show( g_screen ) ;
 		exit_button.show( g_screen ) ;
 		
 		// Update Screen
@@ -969,6 +1050,13 @@ GameStatus drawMenu()
 			menu_music.stopMusic() ;
 
 			return GAME_START ;
+		}
+
+		if( is_guide == true ) 
+		{
+			menu_music.stopMusic() ;
+
+			return GUIDE ;
 		}
 	}
 
@@ -1076,38 +1164,29 @@ GameStatus pauseGame()
 	return EXIT_TO_MENU ;
 }
 
+// Guide Tab ******************************************************************************************************
 
-// Screen Text *************************************************************************************************
-GameStatus renderScreenText( std::string temp_text , int time_delay , TTF_Font* temp_font ) 
+GameStatus guideTab() 
 {
-	// Create Text
-	TextObject screen_text ;
-	screen_text.setColor( 255 , 255 , 255 ) ; // WHITE COLOR CODE 
-	screen_text.setText( temp_text ) ;
-	screen_text.loadRenderText( temp_font , g_screen ) ;
+	// Back Button
+	ButtonObject back_button ;
+	back_button.loadButton( g_screen , button_font , "BACK" ) ;
+	back_button.setPos( BACK_BUTTON_X , BACK_BUTTON_Y , BACK_BUTTON_TEXT_X , BACK_BUTTON_TEXT_Y ) ;
 
-	// Setup Screen 
-	SDL_SetRenderDrawColor( g_screen , RENDER_DRAW_COLOR_R , RENDER_DRAW_COLOR_G , RENDER_DRAW_COLOR_B , RENDER_DRAW_COLOR_ALPHA ) ;
-	SDL_RenderClear( g_screen ) ;
-
-	// Render Background
-	renderBackground( 0 , 0 ) ;
-
-	// Draw Text
-	screen_text.show( g_screen , SCREEN_TEXT_X , SCREEN_TEXT_Y ) ;
-
-	// Update Screen
-	SDL_RenderPresent( g_screen ) ;
+	// Guide Tab
+	BaseObject guide_tab ;
+	guide_tab.loadImage( "media//image//guide_tab.png" , g_screen ) ;
+	guide_tab.setRect( GUIDE_TAB_X , GUIDE_TAB_Y ) ;
 
 	// Frame Timer 
 	ImpTimer frame_timer ;
 
-	int sum_of_time = 0 ;
-
-	bool showingText = true ;
+	bool showingGuideTab = true ;
 	bool is_exit = false ;
 
-	while( showingText == true )
+	GameStatus temp_status = NOTHINGHAPPEN ;
+
+	while( showingGuideTab == true )
 	{
 		// Start Frame Timer
 		frame_timer.start() ;
@@ -1117,18 +1196,60 @@ GameStatus renderScreenText( std::string temp_text , int time_delay , TTF_Font* 
 			// Quit 
 			if( g_event.type == SDL_QUIT ) 
 			{
-				showingText = false ;
+				showingGuideTab = false ;
 
 				is_exit = true ;
 			}
+
+			int mouse_pos_x ;
+			int mouse_pos_y ;
+
+			// Handle Button Input
+			if( g_event.type == SDL_MOUSEMOTION || g_event.type == SDL_MOUSEBUTTONDOWN || g_event.type == SDL_MOUSEBUTTONUP )
+			{
+				// Get Mouse Position
+				SDL_GetMouseState( &mouse_pos_x , &mouse_pos_y ) ;
+
+				// Check Mouse On Button
+				back_button.checkMouse( mouse_pos_x , mouse_pos_y ) ;
+
+				if( g_event.button.button == SDL_BUTTON_LEFT ) 
+				{
+					if( back_button.getButtonIn() == true ) temp_status = EXIT_TO_MENU ;
+				}
+			}
 		}
 
-		sum_of_time += frame_timer.getTick() ;
+		// Setup Screen 
+		SDL_SetRenderDrawColor( g_screen , RENDER_DRAW_COLOR_R , RENDER_DRAW_COLOR_G , RENDER_DRAW_COLOR_B , RENDER_DRAW_COLOR_ALPHA ) ;
+		SDL_RenderClear( g_screen ) ;
 
-		if( sum_of_time > time_delay * 1000 ) showingText = false ;
+		// Render Background
+		renderBackground( 0 , 0 ) ;
 
+		// Show Pause Tab
+		guide_tab.render( g_screen ) ;
+
+		// Showing Button
+		back_button.show( g_screen ) ;
+		
+		// Update Screen
+		SDL_RenderPresent( g_screen ) ;
+
+		// FPS Controller
+		int real_imp_time = frame_timer.getTick() ;
+
+		if( real_imp_time < TIME_ONE_FRAME )
+		{
+			int delay_time = TIME_ONE_FRAME - real_imp_time ;
+
+			SDL_Delay( delay_time ) ;
+		}
+		
 		if( is_exit == true ) return EXIT ;
+
+		if( temp_status == EXIT_TO_MENU ) return EXIT_TO_MENU ;
 	}
 
-	return NOTHINGHAPPEN ;
+	return EXIT_TO_MENU ;
 }

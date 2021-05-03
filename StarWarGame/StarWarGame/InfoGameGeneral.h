@@ -180,8 +180,13 @@ const int NEW_GAME_BUTTON_Y = 359 ;
 const int NEW_GAME_BUTTON_TEXT_X = 34 ;
 const int NEW_GAME_BUTTON_TEXT_Y = 34 ;
 
+const int GUIDE_BUTTON_X = 489 ;
+const int GUIDE_BUTTON_Y = 479 ;
+const int GUIDE_BUTTON_TEXT_X = 79 ;
+const int GUIDE_BUTTON_TEXT_Y = 34 ;
+
 const int EXIT_BUTTON_X = 489 ;
-const int EXIT_BUTTON_Y = 509 ;
+const int EXIT_BUTTON_Y = 599 ;
 const int EXIT_BUTTON_TEXT_X = 94 ;
 const int EXIT_BUTTON_TEXT_Y = 34 ;
 
@@ -203,6 +208,15 @@ const int MENU_BUTTON_X = 489 ;
 const int MENU_BUTTON_Y = 384 ;
 const int MENU_BUTTON_TEXT_X = 94 ;
 const int MENU_BUTTON_TEXT_Y = 34 ;
+
+// GUIDE TAB
+const int GUIDE_TAB_X = 0 ;
+const int GUIDE_TAB_Y = 0 ;
+
+const int BACK_BUTTON_X = 659 ;
+const int BACK_BUTTON_Y = 599 ;
+const int BACK_BUTTON_TEXT_X = 94 ;
+const int BACK_BUTTON_TEXT_Y = 34 ;
 
 // Screen Text 
 const int SCREEN_TEXT_FONT_SIZE = 50 ;

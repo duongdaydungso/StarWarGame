@@ -110,6 +110,7 @@ enum GameStatus
 	EXIT_TO_MENU ,
 	LOST , 
 	CONTINUE ,
+	GUIDE , 
 	NOTHINGHAPPEN 
 } ;
 

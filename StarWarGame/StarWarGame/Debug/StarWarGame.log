@@ -1,87 +1,21 @@
-﻿Build started 03/05/2021 1:20:43 PM.
+﻿Build started 03/05/2021 3:37:51 PM.
      1>Project "C:\Users\admin\OneDrive\Desktop\Git Project\StarWarGame\StarWarGame\StarWarGame.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\StarWarGame.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
-         stdafx.cpp
-         D:\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\StarWarGame.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt BarrackObject.cpp BaseObject.cpp BulletObject.cpp ButtonObject.cpp Character.cpp CommonFunction.cpp CreepObject.cpp ExplodeObject.cpp GameMap.cpp HealthBarObject.cpp ImpTimer.cpp main.cpp SoundObjectcpp.cpp TextObject.cpp
-         TextObject.cpp
-         SoundObjectcpp.cpp
+         D:\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\StarWarGame.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(105): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(556): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(564): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(588): warning C4244: 'argument' : conversion from 'double' to 'const int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(608): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(627): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(648): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(668): warning C4244: 'argument' : conversion from 'double' to 'const int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(684): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(696): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(715): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(735): warning C4244: 'argument' : conversion from 'double' to 'const int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(752): warning C4018: '<' : signed/unsigned mismatch
-         ImpTimer.cpp
-         HealthBarObject.cpp
-         GameMap.cpp
-         ExplodeObject.cpp
-         CreepObject.cpp
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\creepobject.cpp(124): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\creepobject.cpp(125): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\creepobject.cpp(129): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\creepobject.cpp(130): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\creepobject.cpp(136): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\creepobject.cpp(137): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\creepobject.cpp(139): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\creepobject.cpp(140): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\creepobject.cpp(166): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\creepobject.cpp(167): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\creepobject.cpp(169): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\creepobject.cpp(170): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\creepobject.cpp(232): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\creepobject.cpp(233): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-         CommonFunction.cpp
-         Character.cpp
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(146): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(150): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(165): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(169): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(195): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(196): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(208): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(209): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(223): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(224): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(226): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(227): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(297): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(298): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(300): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(301): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(421): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(422): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(689): warning C4244: 'argument' : conversion from 'double' to 'const int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\character.cpp(732): warning C4018: '<' : signed/unsigned mismatch
-         ButtonObject.cpp
-         BulletObject.cpp
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\bulletobject.cpp(118): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\bulletobject.cpp(119): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\bulletobject.cpp(139): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\bulletobject.cpp(140): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\bulletobject.cpp(147): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\bulletobject.cpp(148): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
-         BaseObject.cpp
-         BarrackObject.cpp
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\barrackobject.cpp(138): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\barrackobject.cpp(139): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\barrackobject.cpp(173): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\barrackobject.cpp(215): warning C4244: 'argument' : conversion from 'double' to 'const int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\barrackobject.cpp(256): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\barrackobject.cpp(257): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\barrackobject.cpp(307): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\barrackobject.cpp(321): warning C4244: 'argument' : conversion from 'double' to 'const int', possible loss of data
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\barrackobject.cpp(334): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\barrackobject.cpp(369): warning C4244: 'argument' : conversion from 'double' to 'const int', possible loss of data
-         Generating Code...
+     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(108): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(626): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(634): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(658): warning C4244: 'argument' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(678): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(697): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(718): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(738): warning C4244: 'argument' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(754): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(766): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(785): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(805): warning C4244: 'argument' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\admin\onedrive\desktop\git project\starwargame\starwargame\main.cpp(822): warning C4018: '<' : signed/unsigned mismatch
        Link:
          D:\Visual Studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\admin\OneDrive\Desktop\Git Project\StarWarGame\Debug\StarWarGame.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_mixer.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\admin\OneDrive\Desktop\Git Project\StarWarGame\Debug\StarWarGame.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\admin\OneDrive\Desktop\Git Project\StarWarGame\Debug\StarWarGame.lib" /MACHINE:X86 Debug\BarrackObject.obj
          Debug\BaseObject.obj
@@ -103,4 +37,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:14.75
+Time Elapsed 00:00:02.04
