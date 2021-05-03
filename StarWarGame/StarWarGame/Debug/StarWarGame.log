@@ -1,0 +1,40 @@
+﻿Build started 03/05/2021 12:01:04 PM.
+     1>Project "C:\Users\admin\OneDrive\Desktop\StarWarGame\StarWarGame\StarWarGame.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\StarWarGame.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\admin\onedrive\desktop\starwargame\starwargame\main.cpp(105): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\admin\onedrive\desktop\starwargame\starwargame\main.cpp(556): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\admin\onedrive\desktop\starwargame\starwargame\main.cpp(564): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\onedrive\desktop\starwargame\starwargame\main.cpp(588): warning C4244: 'argument' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\admin\onedrive\desktop\starwargame\starwargame\main.cpp(608): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\onedrive\desktop\starwargame\starwargame\main.cpp(627): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\onedrive\desktop\starwargame\starwargame\main.cpp(648): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\onedrive\desktop\starwargame\starwargame\main.cpp(668): warning C4244: 'argument' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\admin\onedrive\desktop\starwargame\starwargame\main.cpp(684): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\onedrive\desktop\starwargame\starwargame\main.cpp(696): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\onedrive\desktop\starwargame\starwargame\main.cpp(715): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\admin\onedrive\desktop\starwargame\starwargame\main.cpp(735): warning C4244: 'argument' : conversion from 'double' to 'const int', possible loss of data
+     1>c:\users\admin\onedrive\desktop\starwargame\starwargame\main.cpp(752): warning C4018: '<' : signed/unsigned mismatch
+       Link:
+         D:\Visual Studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\admin\OneDrive\Desktop\StarWarGame\Debug\StarWarGame.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDL2_mixer.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\admin\OneDrive\Desktop\StarWarGame\Debug\StarWarGame.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\admin\OneDrive\Desktop\StarWarGame\Debug\StarWarGame.lib" /MACHINE:X86 Debug\BarrackObject.obj
+         Debug\BaseObject.obj
+         Debug\BulletObject.obj
+         Debug\ButtonObject.obj
+         Debug\Character.obj
+         Debug\CommonFunction.obj
+         Debug\CreepObject.obj
+         Debug\ExplodeObject.obj
+         Debug\GameMap.obj
+         Debug\HealthBarObject.obj
+         Debug\ImpTimer.obj
+         Debug\main.obj
+         Debug\SoundObjectcpp.obj
+         Debug\stdafx.obj
+         Debug\TextObject.obj
+         StarWarGame.vcxproj -> C:\Users\admin\OneDrive\Desktop\StarWarGame\Debug\StarWarGame.exe
+     1>Done Building Project "C:\Users\admin\OneDrive\Desktop\StarWarGame\StarWarGame\StarWarGame.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.56
