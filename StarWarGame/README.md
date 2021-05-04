@@ -14,3 +14,4 @@ Mô tả game:
 * Sử dụng W , A , S , D để di chuyển. Sử dụng chuột để bắn đạn.
 * Mục tiêu là đạt được điểm cao nhất có thể hoặc màn cao nhất có thể chơi đến.
 
+Link Demo Video : https://drive.google.com/file/d/15fUgYcfXba4iCe0DQ6far5JbjJ_3Tutq/view?usp=sharing
