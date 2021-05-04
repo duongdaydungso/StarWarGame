@@ -6,7 +6,7 @@
 const double PI = 3.1415926535898 ;
 
 // Game 
-const std::string GAME_NAME = "Star War Game" ;
+const std::string GAME_NAME = "Star Wars Game" ;
 
 // Window 
 static SDL_Window* g_window = NULL ;
